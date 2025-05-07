@@ -20,6 +20,9 @@ from like_tweet import like_tweet
 def test_invalid_tweet_id():
     result = like_tweet("123")  # Invalid tweet ID
     assert result != True, "Should not succeed with invalid tweet ID"
+def test_invalid_tweet_id():
+    result = like_tweet("123")  # Invalid tweet ID
+    assert result != True, "Should not succeed with invalid tweet ID"    
 
 def test_like_valid_tweet():
     tweet_id = "1912946113662910812"  # Your tweet URL ID
