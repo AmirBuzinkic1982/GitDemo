@@ -1,0 +1,37 @@
+
+
+"""
+get_user_id.py
+
+Helper script to fetch the numeric Twitter User ID using a username (handle).
+Requires a valid Bearer Token set in the .env file.
+
+This is useful for setting your USER_ID in the .env file.
+"""
+
+import os
+import requests
+from dotenv import load_dotenv
+
+# Load Bearer Token from .env
+load_dotenv()
+BEARER_TOKEN = os.getenv("BEARER_TOKEN")
+
+# Replace with your actual Twitter handle
+USERNAME = "buzinkic4832"
+
+def get_user_id(username):
+    url = f"https://api.twitter.com/2/users/by/username/{username}"
+    headers = {
+        "Authorization": f"Bearer {BEARER_TOKEN}"
+    }
+    response = requests.get(url, headers=headers)
+
+    if response.status_code == 200:
+        user_data = response.json()
+        print(f"User ID for @{username}: {user_data['data']['id']}")
+        return user_data['data']['id']
+    else:
+        print("Failed to get user ID:", response.status_code, response.text)
+
+get_user_id(USERNAME)
