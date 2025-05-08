@@ -38,6 +38,9 @@ def like_tweet(tweet_id):
     elif response.status_code == 403:
         print(f"❌ Forbidden: {response.status_code} - {response.json()}")
         return 403
+    elif response.status_code == 403:
+        print(f"❌ Forbidden: {response.status_code} - {response.json()}")
+        return 403
     elif response.status_code == 401:
         print("❌ Unauthorized - check Bearer Token.")
         return 401

@@ -32,3 +32,12 @@ def test_like_valid_tweet():
     tweet_id = "1912946113662910812"  # Your tweet URL ID
     result = like_tweet(tweet_id)
     assert result is True or result == 403, f"Expected success or already liked, got {result}"
+    
+def test_like_valid_tweet2():
+    tweet_id = "1912946113662910812"  # Your tweet URL ID
+    result = like_tweet(tweet_id)
+    assert result is True or result == 403, f"Expected success or already liked, got {result}"
+def test_like_valid_tweet3():
+    tweet_id = "1912946113662910812"  # Your tweet URL ID
+    result = like_tweet(tweet_id)
+    assert result is True or result == 403, f"Expected success or already liked, got {result}"
